@@ -1,0 +1,9 @@
+{%- if field_label != blank -%}
+<div class="input-wrapper">
+  <label for="property-{{ field_label | handle }}-{{ product.id }}">{{ field_label }}</label>
+  <div class="input-wrapper-inner" style="display:flex;align-items:center;">
+  	<input type="file" class="input-file-upload{% if required %} input-required{% endif %}" id="property-{{ field_label | handle }}-{{ product.id }}" name="properties[{{ field_label }}]"{% if accept != blank %} accept="{{ accept }}"{% endif %}{% if required %} required{% else %} onchange="this.parentNode.querySelector('.clear-file-input').style.display = 'block';"{% endif %}/>
+    {% unless required %}<a href="javascript:void(0);" style="display:none;margin-left:10px;font-size:13px;color:inherit;" class="clear-file-input" onclick="this.parentNode.querySelector('input').value = '';this.style.display = 'none';">Clear</a>{% endunless %}
+  </div> 
+</div>
+{%- endif -%}
