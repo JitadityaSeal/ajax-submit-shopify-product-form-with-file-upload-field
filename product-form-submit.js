@@ -6,7 +6,7 @@
  * http://www.opensource.org/licenses/mit-license.php
  *
  */ 
-productFormSubmit = () => {
+const productFormSubmit = () => {
     document.querySelectorAll('form[action="/cart/add"]') && [...document.querySelectorAll('form[action="/cart/add"]')].forEach(formElement => {
       formElement.addEventListener('submit', event => {
         event.preventDefault();
