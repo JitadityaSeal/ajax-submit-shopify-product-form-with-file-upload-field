@@ -11,11 +11,11 @@
   .cart-summary-modal .cart-summary .close-cart-summary-modal svg { width: 20px; height: 20px; } 
   .cart-summary-modal .cart-summary .cart-heading { font-size: 20px; text-transform: uppercase; padding-bottom: 20px; margin: 0; border-bottom: 1px solid; }
   .cart-summary-modal .cart-summary .cart-items { margin: 0; max-height: 400px; width: 100%; overflow: auto; }
-  .cart-summary-modal .cart-summary .cart-items .item-block { padding: 15px 0; display: flex; flex-direction: row; flex-wrap: wrap; border-bottom: 1px solid; align-items: center; justify-content: space-between; }
+  .cart-summary-modal .cart-summary .cart-items .item-block { padding: 15px 0; display: flex; flex-direction: row; flex-wrap: wrap; border-bottom: 1px solid; align-items: center; }
   .cart-summary-modal .cart-summary .cart-items .item-block p { margin: 0; }
   .cart-summary-modal .cart-summary .cart-items .item-block .item-title { margin: 0; padding-bottom: 8px; }
-  .cart-summary-modal .cart-summary .cart-items .item-block .item-image-wrapper { max-width: 30%; padding-right: 10px; }
-  .cart-summary-modal .cart-summary .cart-items .item-block .item-info { max-width: 67%; padding: 0 10px; }
+  .cart-summary-modal .cart-summary .cart-items .item-block .item-image-wrapper { width: 30%; padding-right: 10px; }
+  .cart-summary-modal .cart-summary .cart-items .item-block .item-info { width: 67%; padding: 0 10px; }
   .cart-summary-modal .cart-summary .cart-items .item-block .item-option-with-values { display: flex; }
   .cart-summary-modal .cart-summary .cart-items .item-block .item-option-with-values > *:not(:last-child) { margin-right: 12px; }
   .cart-summary-modal .cart-summary .cart-items .item-block .item-qty-and-price { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; }
@@ -52,7 +52,7 @@
         {%- unless item.product.has_only_default_variant -%}
           <div class="item-option-with-values">
             {%- for option in item.options_with_values -%}
-              <p><span class="label">{{ option.name }}:</span><span> {{ option.value }}</span>{% unless forloop.last %},{% endunless %}</p>
+              <p><span class="label">{{ option.name }}:</span><span> {{ option.value }}</span></p>
             {%- endfor -%}
           </div>
         {%- endunless -%}
